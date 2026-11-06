@@ -1,6 +1,7 @@
 package com.comeback.service;
 
 import com.comeback.dao.IEmployeeDao;
+import com.comeback.daofactory.EmployeeDaoFactory;
 import com.comeback.dto.Employee;
 
 public class EmployeeServiceImpl implements IEmployeeService {
@@ -9,8 +10,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
 	@Override
 	public String addEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return null;
+		employeeDao = EmployeeDaoFactory.getEmployeeDaoObject();
+		return employeeDao.addEmployee(employee);
 	}
 
 	@Override
